@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 <url><loc>https://leewanhomedecor.com/</loc><lastmod>2026-11-15</lastmod><priority>1.0</priority>
+<image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-06-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-05-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-04-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-03-n.jpg</image:loc></image:image>
@@ -221,6 +222,7 @@
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-01-04-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-01-25-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-02-n.jpg</image:loc></image:image>
+<image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-06-n.jpg</image:loc></image:image>
 </url>
 <url><loc>https://leewanhomedecor.com/r/airy-guest-bedroom.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-01-23-n.jpg</image:loc></image:image>
@@ -461,6 +463,9 @@
 </url>
 <url><loc>https://leewanhomedecor.com/r/outdoor-rooftop-evening-lounge.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-01-04-n.jpg</image:loc></image:image>
+</url>
+<url><loc>https://leewanhomedecor.com/r/outdoor-room.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority>
+<image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-06-n.jpg</image:loc></image:image>
 </url>
 <url><loc>https://leewanhomedecor.com/r/outdoor-terracotta-patio-with-jute-rug.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2026-12-16-n.jpg</image:loc></image:image>
