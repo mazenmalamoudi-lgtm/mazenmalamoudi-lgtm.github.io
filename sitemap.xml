@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 <url><loc>https://leewanhomedecor.com/</loc><lastmod>2026-11-15</lastmod><priority>1.0</priority>
+<image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-24-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-23-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-22-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-21-n.jpg</image:loc></image:image>
@@ -157,6 +158,7 @@
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-12-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-17-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-20-n.jpg</image:loc></image:image>
+<image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-24-n.jpg</image:loc></image:image>
 </url>
 <url><loc>https://leewanhomedecor.com/c/dining.html</loc><lastmod>2026-11-15</lastmod><priority>0.8</priority>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2026-11-25-n.jpg</image:loc></image:image>
@@ -293,6 +295,9 @@
 </url>
 <url><loc>https://leewanhomedecor.com/r/bedroom-room-5.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-20-n.jpg</image:loc></image:image>
+</url>
+<url><loc>https://leewanhomedecor.com/r/bedroom-room-6.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority>
+<image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-24-n.jpg</image:loc></image:image>
 </url>
 <url><loc>https://leewanhomedecor.com/r/bedroom-room.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-02-n.jpg</image:loc></image:image>
