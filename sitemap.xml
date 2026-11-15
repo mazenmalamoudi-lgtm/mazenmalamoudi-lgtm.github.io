@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 <url><loc>https://leewanhomedecor.com/</loc><lastmod>2026-11-15</lastmod><priority>1.0</priority>
+<image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-28-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-27-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-26-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-25-n.jpg</image:loc></image:image>
@@ -197,6 +198,7 @@
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-17-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-24-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-25-n.jpg</image:loc></image:image>
+<image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-28-n.jpg</image:loc></image:image>
 </url>
 <url><loc>https://leewanhomedecor.com/c/office.html</loc><lastmod>2026-11-15</lastmod><priority>0.8</priority>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-01-14-n.jpg</image:loc></image:image>
@@ -389,6 +391,9 @@
 </url>
 <url><loc>https://leewanhomedecor.com/r/living-najdi-heritage-majlis.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-01-31-n.jpg</image:loc></image:image>
+</url>
+<url><loc>https://leewanhomedecor.com/r/living-navy-and-orange-family-den.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority>
+<image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-28-n.jpg</image:loc></image:image>
 </url>
 <url><loc>https://leewanhomedecor.com/r/living-ramadan-floor-majlis.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-01-18-n.jpg</image:loc></image:image>
