@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 <url><loc>https://leewanhomedecor.com/</loc><lastmod>2026-11-15</lastmod><priority>1.0</priority>
+<image:image><image:loc>https://leewanhomedecor.com/img/room-2027-04-05-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-04-04-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-04-03-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-04-02-n.jpg</image:loc></image:image>
@@ -149,6 +150,7 @@
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-03-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-13-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-28-n.jpg</image:loc></image:image>
+<image:image><image:loc>https://leewanhomedecor.com/img/room-2027-04-05-n.jpg</image:loc></image:image>
 </url>
 <url><loc>https://leewanhomedecor.com/c/bedroom.html</loc><lastmod>2026-11-15</lastmod><priority>0.8</priority>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2026-12-01-n.jpg</image:loc></image:image>
@@ -296,6 +298,9 @@
 </url>
 <url><loc>https://leewanhomedecor.com/r/bathroom-room-3.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-28-n.jpg</image:loc></image:image>
+</url>
+<url><loc>https://leewanhomedecor.com/r/bathroom-room-4.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority>
+<image:image><image:loc>https://leewanhomedecor.com/img/room-2027-04-05-n.jpg</image:loc></image:image>
 </url>
 <url><loc>https://leewanhomedecor.com/r/bathroom-room.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-03-n.jpg</image:loc></image:image>
