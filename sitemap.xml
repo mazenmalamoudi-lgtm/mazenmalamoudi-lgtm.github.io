@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 <url><loc>https://leewanhomedecor.com/</loc><lastmod>2026-11-15</lastmod><priority>1.0</priority>
+<image:image><image:loc>https://leewanhomedecor.com/img/room-2027-04-01-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-31-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-30-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-29-n.jpg</image:loc></image:image>
@@ -222,6 +223,7 @@
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-05-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-11-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-30-n.jpg</image:loc></image:image>
+<image:image><image:loc>https://leewanhomedecor.com/img/room-2027-04-01-n.jpg</image:loc></image:image>
 </url>
 <url><loc>https://leewanhomedecor.com/c/laundry.html</loc><lastmod>2026-11-15</lastmod><priority>0.8</priority>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-01-16-n.jpg</image:loc></image:image>
@@ -459,6 +461,9 @@
 </url>
 <url><loc>https://leewanhomedecor.com/r/kitchen-room-3.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-30-n.jpg</image:loc></image:image>
+</url>
+<url><loc>https://leewanhomedecor.com/r/kitchen-room-4.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority>
+<image:image><image:loc>https://leewanhomedecor.com/img/room-2027-04-01-n.jpg</image:loc></image:image>
 </url>
 <url><loc>https://leewanhomedecor.com/r/kitchen-room.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-03-05-n.jpg</image:loc></image:image>
