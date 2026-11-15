@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 <url><loc>https://leewanhomedecor.com/</loc><lastmod>2026-11-15</lastmod><priority>1.0</priority>
+<image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-16-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-15-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-14-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-13-n.jpg</image:loc></image:image>
@@ -138,6 +139,7 @@
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-01-24-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-05-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-14-n.jpg</image:loc></image:image>
+<image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-16-n.jpg</image:loc></image:image>
 </url>
 <url><loc>https://leewanhomedecor.com/c/kitchen.html</loc><lastmod>2026-11-15</lastmod><priority>0.8</priority>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2026-12-10-n.jpg</image:loc></image:image>
@@ -275,6 +277,9 @@
 </url>
 <url><loc>https://leewanhomedecor.com/r/kids-minimal-scandinavian.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2026-12-17-n.jpg</image:loc></image:image>
+</url>
+<url><loc>https://leewanhomedecor.com/r/kids-montessori-toddler-playroom.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority>
+<image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-16-n.jpg</image:loc></image:image>
 </url>
 <url><loc>https://leewanhomedecor.com/r/kids-reading-and-play-nook.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-01-24-n.jpg</image:loc></image:image>
