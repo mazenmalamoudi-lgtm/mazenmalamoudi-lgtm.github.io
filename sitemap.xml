@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 <url><loc>https://leewanhomedecor.com/</loc><lastmod>2026-11-15</lastmod><priority>1.0</priority>
+<image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-08-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-07-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-06-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-05-n.jpg</image:loc></image:image>
@@ -87,6 +88,7 @@
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-01-08-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-01-22-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-01-30-n.jpg</image:loc></image:image>
+<image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-08-n.jpg</image:loc></image:image>
 </url>
 <url><loc>https://leewanhomedecor.com/c/bedroom.html</loc><lastmod>2026-11-15</lastmod><priority>0.8</priority>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2026-12-01-n.jpg</image:loc></image:image>
@@ -367,6 +369,9 @@
 </url>
 <url><loc>https://leewanhomedecor.com/r/saudi-family-kitchen.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-01-21-n.jpg</image:loc></image:image>
+</url>
+<url><loc>https://leewanhomedecor.com/r/serene-master-bathroom.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority>
+<image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-08-n.jpg</image:loc></image:image>
 </url>
 <url><loc>https://leewanhomedecor.com/r/sleek-white-and-black-kitchen.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2026-12-30-n.jpg</image:loc></image:image>
