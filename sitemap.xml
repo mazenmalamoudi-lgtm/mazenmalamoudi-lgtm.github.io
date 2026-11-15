@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 <url><loc>https://leewanhomedecor.com/</loc><lastmod>2026-11-15</lastmod><priority>1.0</priority>
+<image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-27-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-26-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-25-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-24-n.jpg</image:loc></image:image>
@@ -143,6 +144,7 @@
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2026-12-18-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-01-03-n.jpg</image:loc></image:image>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2027-01-27-n.jpg</image:loc></image:image>
+<image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-27-n.jpg</image:loc></image:image>
 </url>
 <url><loc>https://leewanhomedecor.com/c/kids.html</loc><lastmod>2026-11-15</lastmod><priority>0.8</priority>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2026-11-28-n.jpg</image:loc></image:image>
@@ -273,6 +275,9 @@
 </url>
 <url><loc>https://leewanhomedecor.com/r/entryway-neo-classic-white-and-brass.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2026-11-30-n.jpg</image:loc></image:image>
+</url>
+<url><loc>https://leewanhomedecor.com/r/entryway-small-smart-apartment-entry.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority>
+<image:image><image:loc>https://leewanhomedecor.com/img/room-2027-02-27-n.jpg</image:loc></image:image>
 </url>
 <url><loc>https://leewanhomedecor.com/r/entryway-soft-pink-and-cream.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority>
 <image:image><image:loc>https://leewanhomedecor.com/img/room-2026-12-11-n.jpg</image:loc></image:image>
