@@ -323,4 +323,61 @@ out.append("</urlset>")
 write("sitemap.xml", "\n".join(out) + "\n")
 write("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
 
+
+# ---------- TikTok Pixel ----------
+TTQ_ID = "DBTG9AJC77U7CBT641P0"
+TTQ_START, TTQ_END = "<!--ttq-->", "<!--/ttq-->"
+TTQ_BASE = (
+    "<script>!function (w, d, t) {w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];"
+    "ttq.methods=[\"page\",\"track\",\"identify\",\"instances\",\"debug\",\"on\",\"off\",\"once\",\"ready\",\"alias\","
+    "\"group\",\"enableCookie\",\"disableCookie\",\"holdConsent\",\"revokeConsent\",\"grantConsent\"],"
+    "ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};"
+    "for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);"
+    "ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},"
+    "ttq.load=function(e,n){var r=\"https://analytics.tiktok.com/i18n/pixel/events.js\",o=n&&n.partner;"
+    "ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};"
+    "n=document.createElement(\"script\");n.type=\"text/javascript\",n.async=!0,n.src=r+\"?sdkid=\"+e+\"&lib=\"+t;"
+    "e=document.getElementsByTagName(\"script\")[0];e.parentNode.insertBefore(n,e)};"
+    f"ttq.load('{TTQ_ID}');ttq.page();}}(window, document, 'ttq');</script>"
+)
+# ViewContent on design pages; ClickButton on every Amazon link (the action we want TikTok to optimise for).
+TTQ_EVENTS = (
+    "<script>(function(){try{var h=document.querySelector('main h1');"
+    "var name=h?h.textContent.trim():document.title;"
+    "if(document.querySelector('.hero'))ttq.track('ViewContent',{content_type:'product_group',content_name:name});"
+    "document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*=\"amazon.sa\"]');"
+    "if(!a)return;var box=a.closest('.p');var t=box&&box.querySelector('h3');"
+    "ttq.track('ClickButton',{content_type:'product',content_name:(t?t.textContent.replace(/^\\d+\\s*/,'').trim():"
+    "(a.classList.contains('all')?'Add all: ':'')+name),description:name});},true);}catch(err){}})()</script>"
+)
+
+
+def set_pixel(s):
+    s = re.sub(re.escape(TTQ_START) + ".*?" + re.escape(TTQ_END), "", s, flags=re.S)
+    s = s.replace("</head>", TTQ_START + TTQ_BASE + TTQ_END + "</head>", 1)
+    return s.replace("</body>", TTQ_START + TTQ_EVENTS + TTQ_END + "</body>", 1)
+
+
+PRIV_OLD = "ولا نستخدم ملفات تعريف ارتباط (كوكيز) خاصة بنا أو أدوات تتبع إعلانية."
+PRIV_NEW = "ولا نستخدم ملفات تعريف ارتباط (كوكيز) خاصة بنا، ونستخدم أداة قياس إعلانية واحدة هي TikTok Pixel (موضّحة أدناه)."
+PRIV_PIXEL = ('<p><b>TikTok Pixel:</b> نستخدم أداة القياس من تيك توك لمعرفة عدد من يصل إلى الموقع من إعلاناتنا على تيك توك '
+              'ومن يضغط على روابط المنتجات، حتى نحسّن الإعلانات. تجمع الأداة بيانات تقنية مثل عنوان IP ونوع الجهاز والصفحات التي تزورها، '
+              'وقد تضع تيك توك ملفات تعريف ارتباط في متصفحك، وتخضع هذه البيانات لسياسة خصوصية تيك توك. '
+              'يمكنك منعها بحظر ملفات تعريف الارتباط الخارجية من إعدادات متصفحك أو باستخدام مانع الإعلانات.</p>')
+
+
+for p in glob.glob("**/*.html", recursive=True):
+    if os.path.basename(p).startswith("google"):
+        continue
+    s = read(p)
+    if is_redirect(s):
+        continue
+    s2 = set_pixel(s)
+    if p == "privacy.html":
+        s2 = s2.replace(PRIV_OLD, PRIV_NEW)
+        if "TikTok Pixel:</b>" not in s2:
+            s2 = s2.replace("<p><b>الأطفال:</b>", PRIV_PIXEL + "<p><b>الأطفال:</b>", 1)
+    if s2 != s:
+        write(p, s2)
+
 print(f"SEO pass done: {len(pages)} pages, {len(designs)} designs, {len(categories)} categories")
