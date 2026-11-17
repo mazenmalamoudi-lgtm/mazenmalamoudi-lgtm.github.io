@@ -358,6 +358,28 @@ def set_pixel(s):
     return s.replace("</body>", TTQ_START + TTQ_EVENTS + TTQ_END + "</body>", 1)
 
 
+# Sticky "add all to cart" bar on design pages (mobile): the hero image is taller than a phone
+# screen, so TikTok visitors never saw the button. Same href as the in-page button, so the
+# tag swap and the ClickButton pixel event apply to it too.
+CTA_START, CTA_END = "<!--cta-->", "<!--/cta-->"
+CTA_CSS = ("<style>.sticky-cta{display:none}@media(max-width:720px){.sticky-cta{display:block;position:fixed;left:0;right:0;bottom:0;"
+           "z-index:50;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(250,246,240,.97);"
+           "box-shadow:0 -2px 12px rgba(0,0,0,.15)}.sticky-cta a{display:block;text-align:center;margin:0;padding:14px;"
+           "font-size:17px;font-weight:bold}body{padding-bottom:84px}}</style>")
+
+
+def set_cta(s):
+    s = re.sub(re.escape(CTA_START) + ".*?" + re.escape(CTA_END), "", s, flags=re.S)
+    if 'class="hero"' not in s or "</main>" not in s:
+        return s
+    m = re.search(r'<a class="btn all"[^>]*href="([^"]+)"[^>]*>([^<]*)</a>', s)
+    if not m:
+        return s
+    bar = (CTA_START + CTA_CSS + '<div class="sticky-cta"><a class="btn all" rel="sponsored nofollow" href="'
+           + m.group(1) + '">🛒 ' + m.group(2) + "</a></div>" + CTA_END)
+    return s.replace("</main>", "</main>" + bar, 1)
+
+
 PRIV_OLD = "ولا نستخدم ملفات تعريف ارتباط (كوكيز) خاصة بنا أو أدوات تتبع إعلانية."
 PRIV_NEW = "ولا نستخدم ملفات تعريف ارتباط (كوكيز) خاصة بنا، ونستخدم أداة قياس إعلانية واحدة هي TikTok Pixel (موضّحة أدناه)."
 PRIV_PIXEL = ('<p><b>TikTok Pixel:</b> نستخدم أداة القياس من تيك توك لمعرفة عدد من يصل إلى الموقع من إعلاناتنا على تيك توك '
@@ -372,7 +394,7 @@ for p in glob.glob("**/*.html", recursive=True):
     s = read(p)
     if is_redirect(s):
         continue
-    s2 = set_pixel(s)
+    s2 = set_cta(set_pixel(s))
     if p == "privacy.html":
         s2 = s2.replace(PRIV_OLD, PRIV_NEW)
         if "TikTok Pixel:</b>" not in s2:
