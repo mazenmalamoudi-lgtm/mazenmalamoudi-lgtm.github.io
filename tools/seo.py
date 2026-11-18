@@ -385,6 +385,27 @@ CTA_CSS = ("<style>.sticky-cta{display:none}@media(max-width:720px){.sticky-cta{
            "font-size:17px;font-weight:bold}body{padding-bottom:84px}}</style>")
 
 
+# ---------- Google Analytics 4 ----------
+GA_ID = "G-7B416E9HXK"
+GA_START, GA_END = "<!--ga4-->", "<!--/ga4-->"
+GA_BASE = (
+    f'<script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>'
+    "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}"
+    f"gtag('js',new Date());gtag('config','{GA_ID}');"
+    # Amazon clicks as a GA4 event (sent by beacon, so it survives the page change).
+    "document.addEventListener('click',function(e){try{var a=e.target.closest&&e.target.closest('a[href*=\"amazon.sa\"]');"
+    "if(!a)return;var b=a.closest('.p'),t=b&&b.querySelector('h3'),h=document.querySelector('main h1');"
+    "gtag('event','amazon_click',{link_type:a.classList.contains('all')?'add_all':'product',"
+    "item_name:t?t.textContent.replace(/^\\d+\\s*/,'').trim():'',page_name:h?h.textContent.trim():document.title,"
+    "transport_type:'beacon'});}catch(err){}},true);</script>"
+)
+
+
+def set_ga(s):
+    s = re.sub(re.escape(GA_START) + ".*?" + re.escape(GA_END), "", s, flags=re.S)
+    return s.replace("</head>", GA_START + GA_BASE + GA_END + "</head>", 1)
+
+
 def set_cta(s):
     s = re.sub(re.escape(CTA_START) + ".*?" + re.escape(CTA_END), "", s, flags=re.S)
     if 'class="hero"' not in s or "</main>" not in s:
@@ -399,6 +420,12 @@ def set_cta(s):
 
 PRIV_OLD = "ولا نستخدم ملفات تعريف ارتباط (كوكيز) خاصة بنا أو أدوات تتبع إعلانية."
 PRIV_NEW = "ولا نستخدم ملفات تعريف ارتباط (كوكيز) خاصة بنا، ونستخدم أداة قياس إعلانية واحدة هي TikTok Pixel (موضّحة أدناه)."
+PRIV_NEW2 = ("ولا نستخدم ملفات تعريف ارتباط (كوكيز) خاصة بنا، ونستخدم أداتَي قياس هما TikTok Pixel "
+             "و Google Analytics (موضّحتان أدناه).")
+PRIV_GA = ('<p><b>Google Analytics:</b> نستخدم خدمة Google Analytics لمعرفة عدد الزوار والصفحات الأكثر زيارة ومن أين يأتي الزوار، '
+           'حتى نحسّن المحتوى. تجمع الخدمة بيانات تقنية مثل نوع الجهاز والمتصفح والموقع التقريبي والصفحات التي تزورها، '
+           'وتضع Google ملفات تعريف ارتباط في متصفحك، وتخضع هذه البيانات لسياسة خصوصية Google. '
+           'يمكنك منعها بحظر ملفات تعريف الارتباط الخارجية من إعدادات متصفحك أو باستخدام إضافة إيقاف Google Analytics.</p>')
 PRIV_PIXEL = ('<p><b>TikTok Pixel:</b> نستخدم أداة القياس من تيك توك لمعرفة عدد من يصل إلى الموقع من إعلاناتنا على تيك توك '
               'ومن يضغط على روابط المنتجات، حتى نحسّن الإعلانات. تجمع الأداة بيانات تقنية مثل عنوان IP ونوع الجهاز والصفحات التي تزورها، '
               'وقد تضع تيك توك ملفات تعريف ارتباط في متصفحك، وتخضع هذه البيانات لسياسة خصوصية تيك توك. '
@@ -411,9 +438,11 @@ for p in glob.glob("**/*.html", recursive=True):
     s = read(p)
     if is_redirect(s):
         continue
-    s2 = set_cta(set_pixel(s))
+    s2 = set_ga(set_cta(set_pixel(s)))
     if p == "privacy.html":
-        s2 = s2.replace(PRIV_OLD, PRIV_NEW)
+        s2 = s2.replace(PRIV_OLD, PRIV_NEW).replace(PRIV_NEW, PRIV_NEW2)
+        if "Google Analytics:</b>" not in s2:
+            s2 = s2.replace("<p><b>الأطفال:</b>", PRIV_GA + "<p><b>الأطفال:</b>", 1)
         if "TikTok Pixel:</b>" not in s2:
             s2 = s2.replace("<p><b>الأطفال:</b>", PRIV_PIXEL + "<p><b>الأطفال:</b>", 1)
     if s2 != s:
