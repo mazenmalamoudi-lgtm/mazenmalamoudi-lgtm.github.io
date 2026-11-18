@@ -342,13 +342,30 @@ TTQ_BASE = (
 )
 # ViewContent on design pages; ClickButton on every Amazon link (the action we want TikTok to optimise for).
 TTQ_EVENTS = (
-    "<script>(function(){try{var h=document.querySelector('main h1');"
-    "var name=h?h.textContent.trim():document.title;"
+    "<script>(function(){try{"
+    # Source-tag swap that also works in in-app browsers (TikTok) where sessionStorage throws:
+    # read ?src= from the URL first, fall back to sessionStorage, and carry src on internal links.
+    "var T={'tiktok':'leewantiktok-21'};"
+    "try{[].forEach.call(document.scripts,function(x){var m=x.textContent.match(/var T=(\\{[^}]*\\})/);"
+    "if(m){var o=JSON.parse(m[1]);for(var k in o)T[k]=o[k];}});}catch(e){}"
+    "var src=null;try{src=new URLSearchParams(location.search).get('src');}catch(e){}"
+    "try{if(src)sessionStorage.setItem('src',src);else src=sessionStorage.getItem('src');}catch(e){}"
+    "if(src&&T[src]){document.querySelectorAll('a[href*=\"amazon.sa\"]').forEach(function(a){"
+    "a.href=a.href.replace(/(tag|AssociateTag)=[\\w-]+/,'$1='+T[src]);});"
+    "document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');"
+    "if(!h||/^(https?:|mailto:|#)/.test(h)||h.indexOf('src=')>-1)return;"
+    "var i=h.indexOf('#');var base=i<0?h:h.slice(0,i),frag=i<0?'':h.slice(i);"
+    "a.setAttribute('href',base+(base.indexOf('?')<0?'?':'&')+'src='+encodeURIComponent(src)+frag);});}"
+    "var h=document.querySelector('main h1');var name=h?h.textContent.trim():document.title;"
     "if(document.querySelector('.hero'))ttq.track('ViewContent',{content_type:'product_group',content_name:name});"
+    # ClickButton: send the event, then open Amazon 350 ms later so the pixel request isn't cut off.
     "document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*=\"amazon.sa\"]');"
     "if(!a)return;var box=a.closest('.p');var t=box&&box.querySelector('h3');"
-    "ttq.track('ClickButton',{content_type:'product',content_name:(t?t.textContent.replace(/^\\d+\\s*/,'').trim():"
-    "(a.classList.contains('all')?'Add all: ':'')+name),description:name});},true);}catch(err){}})()</script>"
+    "try{ttq.track('ClickButton',{content_type:'product',content_name:(t?t.textContent.replace(/^\\d+\\s*/,'').trim():"
+    "(a.classList.contains('all')?'Add all: ':'')+name),description:name});}catch(err){}"
+    "if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target==='_blank')return;"
+    "e.preventDefault();var u=a.href;setTimeout(function(){location.href=u;},350);},true);"
+    "}catch(err){}})()</script>"
 )
 
 
