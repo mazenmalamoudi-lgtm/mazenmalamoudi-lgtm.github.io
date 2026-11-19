@@ -406,6 +406,23 @@ def set_ga(s):
     return s.replace("</head>", GA_START + GA_BASE + GA_END + "</head>", 1)
 
 
+# Mobile landing layout for design pages: TikTok visitors landed on a header, 10 nav pills and a
+# full-height image, so the title, "add all" button and products sat below the first screen.
+LP_START, LP_END = "<!--lp-->", "<!--/lp-->"
+LP_CSS = ("<style>@media(max-width:720px){nav{display:none}header{padding:8px 12px}"
+          "header p{display:none}header .logo{font-size:18px}"
+          ".hero{gap:8px}.hero img{max-height:46vh;width:auto;max-width:100%;object-fit:contain;display:block;margin:0 auto}"
+          ".hero .note{text-align:center}main h1{font-size:1.2em;margin:.3em 0}.hero .btn.all{display:block;text-align:center}"
+          ".p{padding:10px 12px;margin-bottom:8px}.p .btn{margin-top:6px;padding:8px 14px}}</style>")
+
+
+def set_lp(s):
+    s = re.sub(re.escape(LP_START) + ".*?" + re.escape(LP_END), "", s, flags=re.S)
+    if 'class="hero"' not in s:
+        return s
+    return s.replace("</head>", LP_START + LP_CSS + LP_END + "</head>", 1)
+
+
 def set_cta(s):
     s = re.sub(re.escape(CTA_START) + ".*?" + re.escape(CTA_END), "", s, flags=re.S)
     if 'class="hero"' not in s or "</main>" not in s:
@@ -438,7 +455,7 @@ for p in glob.glob("**/*.html", recursive=True):
     s = read(p)
     if is_redirect(s):
         continue
-    s2 = set_ga(set_cta(set_pixel(s)))
+    s2 = set_lp(set_ga(set_cta(set_pixel(s))))
     if p == "privacy.html":
         s2 = s2.replace(PRIV_OLD, PRIV_NEW).replace(PRIV_NEW, PRIV_NEW2)
         if "Google Analytics:</b>" not in s2:
