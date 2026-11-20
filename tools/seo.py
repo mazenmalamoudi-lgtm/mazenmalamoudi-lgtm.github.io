@@ -436,6 +436,22 @@ def set_cta(s):
     return s.replace("</main>", "</main>" + bar, 1)
 
 
+# "Design my room" pill at the end of the category nav on every page.
+DMR_START, DMR_END = "<!--dmr-->", "<!--/dmr-->"
+
+
+def set_dmr(s):
+    s = re.sub(re.escape(DMR_START) + ".*?" + re.escape(DMR_END), "", s, flags=re.S)
+    m = re.search(r'<nav>.*?href="((?:\.\./)*)c/laundry\.html".*?</nav>', s, re.S)
+    if not m:
+        return s
+    pill = (DMR_START + '<a href="' + m.group(1) + 'design-my-room.html?src=nav" '
+            'style="background:#4a2e17;color:#fff;border-color:#4a2e17;font-weight:700">'
+            '✨ صمّم غرفتك مجاناً</a>' + DMR_END)
+    end = m.end() - len("</nav>")
+    return s[:end] + pill + s[end:]
+
+
 PRIV_OLD = "ولا نستخدم ملفات تعريف ارتباط (كوكيز) خاصة بنا أو أدوات تتبع إعلانية."
 PRIV_NEW = "ولا نستخدم ملفات تعريف ارتباط (كوكيز) خاصة بنا، ونستخدم أداة قياس إعلانية واحدة هي TikTok Pixel (موضّحة أدناه)."
 PRIV_NEW2 = ("ولا نستخدم ملفات تعريف ارتباط (كوكيز) خاصة بنا، ونستخدم أداتَي قياس هما TikTok Pixel "
@@ -456,7 +472,7 @@ for p in glob.glob("**/*.html", recursive=True):
     s = read(p)
     if is_redirect(s):
         continue
-    s2 = set_lp(set_ga(set_cta(set_pixel(s))))
+    s2 = set_dmr(set_lp(set_ga(set_cta(set_pixel(s)))))
     if p == "privacy.html":
         s2 = s2.replace(PRIV_OLD, PRIV_NEW).replace(PRIV_NEW, PRIV_NEW2)
         if "Google Analytics:</b>" not in s2:
