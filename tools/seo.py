@@ -21,6 +21,7 @@ STATIC_DESC = {
     "about.html": "تعرّف على ليوان: مشروع سعودي يجمع أفكار ديكور كاملة لكل غرف البيت، بقطع حقيقية متوفرة في أمازون السعودية.",
     "contact.html": "تواصل مع فريق ليوان لأي استفسار عن تصاميم الديكور أو القطع المقترحة.",
     "privacy.html": "سياسة الخصوصية لموقع ليوان: كيف نتعامل مع بياناتك وروابط شركاء أمازون.",
+    "design-my-room.html": "ارفع صورة غرفتك ونرسل لك تصميماً مقترحاً بقطع حقيقية من أمازون السعودية، مع رابط كل قطعة.",
 }
 HOME_DESC = ("أفكار ديكور كاملة لكل غرف البيت: مجالس، صالات، غرف نوم، مطابخ، حمامات وغرف أطفال. "
              "شوف التصميم واطلب كل قطعة فيه من أمازون السعودية.")
@@ -321,7 +322,7 @@ for path, imgs in pages:
     out.append("</url>")
 out.append("</urlset>")
 write("sitemap.xml", "\n".join(out) + "\n")
-write("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
+write("robots.txt", f"User-agent: *\nAllow: /\nDisallow: /p/\n\nSitemap: {SITE}/sitemap.xml\n")
 
 
 # ---------- TikTok Pixel ----------
